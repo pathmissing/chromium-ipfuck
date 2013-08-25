@@ -49,16 +49,12 @@ function fillSettingsForm() {
 function submitSettings() {
 	var bg = chrome.extension.getBackgroundPage();
 	bg.headers = [];
-	console.log('OMG HELLOOO');
-	console.log(bg.headers);
 	for (x in bg.possibleHeaders) {
 		var h = bg.possibleHeaders[x];
 		if (document.getElementById("header-"+h).checked) {
 			console.log(h+': ENABLED');
-			bg.headers.push(h);
 		}
 	}
-	console.log(bg.headers);
 	
 	bg.enabled = document.getElementById("enabled").checked;
 	
@@ -115,3 +111,4 @@ document.getElementById("reset-config").onclick = function() {
 
 fillSettingsForm();
 checkFormEnabled();
+
