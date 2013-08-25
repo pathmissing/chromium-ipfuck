@@ -68,6 +68,9 @@ function submitSettings() {
 	bg.list = Array();
 	var inlist = document.getElementById("ip-list").value.split("\n");
 	for (line in inlist) {
+		if (line == '') {
+			continue;
+		}
 		bg.list.push(inlist[line].split("."));
 	}
 	
