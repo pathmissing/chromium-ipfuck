@@ -25,6 +25,9 @@ function generateIp() {
 }
 
 function handleBeforeSendHeaders(data) {
+	if (!enabled) {
+		return {};
+	}
 	for (var r in whitelist) {
 		if (data.url.match(whitelist[r])) {
 			return;
