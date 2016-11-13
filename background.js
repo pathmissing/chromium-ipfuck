@@ -15,7 +15,7 @@ function generateIp() {
 	if (behaviour == "range") {
 		var ip = Array();
 		for (var i=0; i<4; i++) {
-			ip[i] = Math.floor(Math.random()*range_to[i]+range_from[i]);
+			ip[i] = Math.floor(Math.random()*(range_to[i]-range_from[i]+1)+range_from[i]);
 		}
 		return ip.join(".");
 	}
