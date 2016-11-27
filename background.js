@@ -14,8 +14,12 @@ var whitelist = [];
 function generateIp() {
 	if (behaviour == "range") {
 		var ip = Array();
+
+		range_from = range_from.map((octet) => parseInt(octet, 10));
+		range_to = range_to.map((octet) => parseInt(octet, 10));
+
 		for (var i=0; i<4; i++) {
-			ip[i] = Math.floor(Math.random()*range_to[i]+range_from[i]);
+			ip[i] = Math.floor(Math.random()*(range_to[i]-range_from[i]+1)+range_from[i]);
 		}
 		return ip.join(".");
 	}
