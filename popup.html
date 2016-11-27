@@ -1,63 +1,63 @@
 <!doctype html>
 <html>
-	<head>
-		<title>IPFuck</title>
-		<style>
-			body {
-				min-width: 450px;
-				overflow-x: hidden;
-			}
-		</style>
-	</head>
-	<body>
-		<h2>IPFuck</h2>
-		<form id="form">
-			<label><input type="checkbox" id="enabled" />
-					Enable IPFuck</label>
-			<fieldset>
-				<legend>Headers to overwrite</legend>
-				<label><input type="checkbox" id="header-X-Forwarded-For" />
-					X-Forwarded-For</label><br />
-				<label><input type="checkbox" id="header-Client-Ip" />
-					Client-Ip</label><br />
-				<label><input type="checkbox" id="header-Via" />
-					Via</label>
-			</fieldset>
-			<fieldset>
-				<legend>Behaviour</legend>
-				<label><input type="radio" name="behaviour" id="behaviour-range" />
-					Random IP within a range</label><br />
-				<label><input type="radio" name="behaviour" id="behaviour-list" />
-					Selected IPs within a list</label><br />
-				<label><input type="checkbox" id="behaviour-sync-ips" />
-					Synchronize IP together?</label>
-			</fieldset>
-			<fieldset>
-				<legend>IP range</legend>
-				From:
-				<input type="number" id="ip-range-from-a" min="0" max="255" /> .
-				<input type="number" id="ip-range-from-b" min="0" max="255" /> .
-				<input type="number" id="ip-range-from-c" min="0" max="255" /> .
-				<input type="number" id="ip-range-from-d" min="0" max="255" /><br />
-				To:
-				<input type="number" id="ip-range-to-a" min="0" max="255" /> .
-				<input type="number" id="ip-range-to-b" min="0" max="255" /> .
-				<input type="number" id="ip-range-to-c" min="0" max="255" /> .
-				<input type="number" id="ip-range-to-d" min="0" max="255" /><br />
-			</fieldset>
-			<fieldset>
-				<legend>IP list (one IP per line)</legend>
-				<textarea id="ip-list" rows="5"></textarea>
-			</fieldset>
-			<fieldset>
-				<legend>Whitelist (one host per line)</legend>
-				<textarea id="whitelist" rows="5"></textarea>
-			</fieldset>
-			<input type="submit" value="save&amp;apply" />
-			<p id="status"></p>
-		</form>
-		<p style="text-align: right">IPFuck for Chromium - Xa &lt;xa@xomg.net&gt;<br />
-			<a href="http://ipfuck.paulds.fr/">IPFuck</a> | <a id="reset-config" href="#">default settings</a></p>
-		<script src="popup.js"></script>
-	</body>
+    <head>
+        <title>IPFuck</title>
+        <style>
+            body {
+                min-width: 450px;
+                overflow-x: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>IPFuck</h2>
+        <form id="form">
+            <label><input type="checkbox" id="enabled" />
+                    Enable IPFuck</label>
+            <fieldset>
+                <legend>Headers to overwrite</legend>
+                <label><input type="checkbox" id="header-X-Forwarded-For" />
+                    X-Forwarded-For</label><br />
+                <label><input type="checkbox" id="header-Client-Ip" />
+                    Client-Ip</label><br />
+                <label><input type="checkbox" id="header-Via" />
+                    Via</label>
+            </fieldset>
+            <fieldset>
+                <legend>Behaviour</legend>
+                <label><input type="radio" name="behaviour" id="behaviour-range" />
+                    Random IP within a range</label><br />
+                <label><input type="radio" name="behaviour" id="behaviour-list" />
+                    Selected IPs within a list</label><br />
+                <label><input type="checkbox" id="behaviour-sync-ips" />
+                    Synchronize IP together?</label>
+            </fieldset>
+            <fieldset>
+                <legend>IP range</legend>
+                From:
+                <input type="number" id="ip-range-from-a" min="0" max="255" /> .
+                <input type="number" id="ip-range-from-b" min="0" max="255" /> .
+                <input type="number" id="ip-range-from-c" min="0" max="255" /> .
+                <input type="number" id="ip-range-from-d" min="0" max="255" /><br />
+                To:
+                <input type="number" id="ip-range-to-a" min="0" max="255" /> .
+                <input type="number" id="ip-range-to-b" min="0" max="255" /> .
+                <input type="number" id="ip-range-to-c" min="0" max="255" /> .
+                <input type="number" id="ip-range-to-d" min="0" max="255" /><br />
+            </fieldset>
+            <fieldset>
+                <legend>IP list (one IP per line)</legend>
+                <textarea id="ip-list" rows="5"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Whitelist (one host per line)</legend>
+                <textarea id="whitelist" rows="5"></textarea>
+            </fieldset>
+            <input type="submit" value="save&amp;apply" />
+            <p id="status"></p>
+        </form>
+        <p style="text-align: right">IPFuck for Chromium - Xa &lt;xa@xomg.net&gt;<br />
+            <a href="http://ipfuck.paulds.fr/">IPFuck</a> | <a id="reset-config" href="#">default settings</a></p>
+        <script src="popup.js"></script>
+    </body>
 </html>
