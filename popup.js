@@ -1,3 +1,10 @@
+if(typeof(String.prototype.trim) === "undefined") {
+    String.prototype.trim = function() {
+        return String(this).replace(/^\s+|\s+$/g, '');
+    };
+}
+
+
 function parseIp(base) {
     var ip = Array();
     ip[0] = parseInt(document.getElementById(base+"a").value);
@@ -68,12 +75,16 @@ function submitSettings() {
     bg.range_to = parseIp("ip-range-to-");
     
     bg.list = Array();
-    var inlist = document.getElementById("ip-list").value.split("\n");
+    var inlist = document.getElementById("ip-list").value.trim().split("\n");
     for (line in inlist) {
         if (line == '') {
             continue;
         }
-        bg.list.push(inlist[line].split("."));
+        var ip = inlist[line].trim().split(".");
+        if (ip.length != 4) {
+            continue;
+        }
+        bg.list.push(ip);
     }
     
     if (document.getElementById("behaviour-sync-ips").checked) {
@@ -82,7 +93,7 @@ function submitSettings() {
         bg.sync = false;
     }
     
-    bg.whitelist = document.getElementById("whitelist").value.split("\n");
+    bg.whitelist = document.getElementById("whitelist").value.trim().split("\n");
     
     bg.saveSettings();
     bg.applySettings();
