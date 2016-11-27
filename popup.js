@@ -53,6 +53,7 @@ function submitSettings() {
 		var h = bg.possibleHeaders[x];
 		if (document.getElementById("header-"+h).checked) {
 			console.log(h+': ENABLED');
+                        bg.headers.push(h);
 		}
 	}
 	
