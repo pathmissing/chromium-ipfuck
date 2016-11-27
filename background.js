@@ -1,5 +1,5 @@
 var filter = [ "<all_urls>" ];
-var possibleHeaders = ["X-Forwarded-For", "Client-Ip", "Via"];
+var possibleHeaders = ["X-Forwarded-For", "Client-Ip", "Via", "X-Real-IP"];
 
 var enabled = false;
 var headers = [];
