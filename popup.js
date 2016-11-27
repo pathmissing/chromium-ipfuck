@@ -29,9 +29,9 @@ function fillSettingsForm() {
     }
     
     if (bg.behaviour == "range") {
-        document.getElementById("behaviour-range").checked = 1;
+        document.getElementById("b-rad-range").checked = 1;
     } else {
-        document.getElementById("behaviour-list").checked = 1;
+        document.getElementById("b-rad-list").checked = 1;
     }
     
     fillIp(bg.range_from, "ip-range-from-");
@@ -59,7 +59,7 @@ function submitSettings() {
     
     bg.enabled = document.getElementById("enabled").checked;
     
-    if (document.getElementById("behaviour-range").checked) {
+    if (document.getElementById("b-rad-range").checked) {
         bg.behaviour = "range";
     } else {
         bg.behaviour = "list";
