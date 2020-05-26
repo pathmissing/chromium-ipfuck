@@ -55,7 +55,7 @@ function registerListener() {
     chrome.webRequest.onBeforeSendHeaders.addListener(
         handleBeforeSendHeaders,
         {urls:filter},
-        ["blocking","requestHeaders"]
+        ["blocking","requestHeaders","extraHeaders"]
     );
     console.log("registered listener.");
 }
